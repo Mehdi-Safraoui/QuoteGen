@@ -1,13 +1,14 @@
 import React from "react";
-import { BrowserRouter } from 'react-router-dom';
-import Rout from "./rout";
+import SignUp from "./components/signup";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const App = () => {
   return (
     <>
-      <BrowserRouter>
-        <Rout />
-      </BrowserRouter>
+      <SignUp />
+      <ToastContainer />
     </>
   );
 };
