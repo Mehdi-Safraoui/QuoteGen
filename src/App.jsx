@@ -1,14 +1,16 @@
 import React from "react";
-import SignUp from "./components/signup";
-import Login from "./components/login";
 import 'react-toastify/dist/ReactToastify.css';
+import Header from "./components/header";
+import Main from "./components/main"
+import Footer from "./components/footer";
 
 
 const App = () => {
   return (
     <>
-      <SignUp />
-      <Login />  
+    <Header />
+    <Main />
+    <Footer />
     </>
   );
 };
