@@ -18,7 +18,6 @@ const App = () => {
           <Route path="/login" Component={Login} />
           <Route path="/allquotes" Component={AllQuotes} />
         </Routes>
-        <Main />
         <Footer />
       </Router>
     </>

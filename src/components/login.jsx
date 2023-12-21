@@ -29,7 +29,7 @@ export default function Login() {
 
   return (
     <>
-      <form class="max-w-sm mx-auto text-blue-700" onSubmit={login}>
+      <form class="flex items-center justify-center h-screen flex-col text-blue-700" onSubmit={login}>
         <h1 className="text-center m-10 font-bold text-5xl ">Login</h1>
 
         <div class="mb-5">
@@ -42,8 +42,8 @@ export default function Login() {
           <input
             type="email"
             id="email"
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="name@flowbite.com"
+            className="bg-gray-50 border w-60 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="name@gmail.com"
             onChange={(e) => setEmail(e.target.value)}
             required
           />
@@ -56,9 +56,10 @@ export default function Login() {
             Your password
           </label>
           <input
+          placeholder="password"
             type="password"
             id="password"
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             onChange={(e) => setPassword(e.target.value)}
             required
           />
