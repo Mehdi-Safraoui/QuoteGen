@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 export default function Main() {
   const [currentQuote, setCurrentQuote] = useState("");
   const [currentAuthor, setCurrentAuthor] = useState("");
+  const [user , setUser] = useState(null)
 
   useEffect(() => {
     // Appel à votre API pour obtenir une citation aléatoire lors du chargement de la page
