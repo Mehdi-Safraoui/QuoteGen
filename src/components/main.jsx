@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
+import Profile from "./profile";
 
-export default function Main() {
+export default function Main({ addQuoteToHistory }) {
   const [currentQuote, setCurrentQuote] = useState("");
   const [currentAuthor, setCurrentAuthor] = useState("");
-  const [user , setUser] = useState(null)
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     // Appel à votre API pour obtenir une citation aléatoire lors du chargement de la page

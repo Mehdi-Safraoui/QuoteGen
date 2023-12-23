@@ -7,6 +7,7 @@ import SignUp from "./components/signup";
 import Login from "./components/login";
 import AllQuotes from "./components/all-quotes";
 import { AuthProvider } from "./auth-context";
+import Profile from "./components/profile";
 
 const App = () => {
   return (
@@ -15,10 +16,11 @@ const App = () => {
         <Router>
           <Header />
           <Routes>
-            <Route path="/" Component={Main} />
-            <Route path="/signup" Component={SignUp} />
-            <Route path="/login" Component={Login} />
-            <Route path="/allquotes" Component={AllQuotes} />
+          <Route path="/" element={<Main />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/allquotes" element={<AllQuotes />} />
+            <Route path="/profile" element={<Profile />} />
           </Routes>
           <Footer />
         </Router>

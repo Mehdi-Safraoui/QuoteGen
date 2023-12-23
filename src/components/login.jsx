@@ -29,12 +29,12 @@ export default function Login() {
 
   return (
     <>
-      <form class="flex items-center justify-center h-screen flex-col text-blue-700" onSubmit={login}>
+      <form className="flex items-center justify-center h-screen flex-col text-blue-700" onSubmit={login}>
         <h1 className="text-center m-10 font-bold text-5xl ">Login</h1>
 
-        <div class="mb-5">
+        <div className="mb-5">
           <label
-            for="email"
+            htmlFor="email"
             className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
           >
             Your email
@@ -48,10 +48,10 @@ export default function Login() {
             required
           />
         </div>
-        <div class="mb-5">
+        <div className="mb-5">
           <label
-            for="password"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            htmlFor="password"
+            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
           >
             Your password
           </label>
@@ -64,8 +64,8 @@ export default function Login() {
             required
           />
         </div>
-        <div class="flex items-start mb-5">
-          <div class="flex items-center h-5">
+        <div className="flex items-start mb-5">
+          <div className="flex items-center h-5">
             <input
               id="remember"
               type="checkbox"
@@ -75,7 +75,7 @@ export default function Login() {
             />
           </div>
           <label
-            for="remember"
+            htmlFor="remember"
             className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
           >
             Remember me

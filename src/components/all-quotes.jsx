@@ -20,7 +20,7 @@ export default function AllQuotes() {
   }, []);
 
   return (
-    <div>
+    <div className="flex items-center justify-center flex-col p-10">
       <h1 className="text-2xl font-bold mb-4">All Quotes</h1>
       <ul>
         {fetchedQuotes.map((quote) => (
