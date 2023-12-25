@@ -1,10 +1,23 @@
 import React, { useState, useEffect } from "react";
 import Profile from "./profile";
+import useAuth from "../auth-context";
 
-export default function Main({ addQuoteToHistory }) {
+export default function Main() {
   const [currentQuote, setCurrentQuote] = useState("");
   const [currentAuthor, setCurrentAuthor] = useState("");
-  const [user, setUser] = useState(null);
+  const [quoteHistory, setQuoteHistory] = useState([]);
+  const { user } = useAuth();
+
+  // Fonction pour ajouter une nouvelle citation à l'historique
+  const addToHistory = (newQuote) => {
+    const updatedHistory = [...quoteHistory, newQuote];
+    setQuoteHistory(updatedHistory);
+    // Enregistrer l'historique mis à jour dans localStorage
+    localStorage.setItem(
+      `${user.uid}_quote_history`,
+      JSON.stringify(updatedHistory)
+    );
+  };
 
   useEffect(() => {
     // Appel à votre API pour obtenir une citation aléatoire lors du chargement de la page
@@ -19,13 +32,18 @@ export default function Main({ addQuoteToHistory }) {
         const randomQuote = data.quotes[randomIndex];
         setCurrentQuote(randomQuote.quote);
         setCurrentAuthor(randomQuote.author);
+        // Appeler directement la fonction addToHistory dans Profile
+        addToHistory(randomQuote.quote);
       })
       .catch((error) => console.error("Error fetching random quote:", error));
   };
 
+
   const handleGenerateNewQuote = () => {
     fetchRandomQuote();
   };
+
+<Profile addQuoteToHistory={addToHistory} />;
 
   return (
     <div className="flex items-center justify-center h-screen flex-col">

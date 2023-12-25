@@ -1,8 +1,7 @@
-// profile.jsx
 import React, { useState, useEffect } from "react";
 import useAuth from "../auth-context";
 
-export default function Profile() {
+export default function Profile({ addQuoteToHistory }) {
   const { user } = useAuth();
   const [quoteHistory, setQuoteHistory] = useState([]);
 
@@ -16,14 +15,6 @@ export default function Profile() {
     }
   }, [user]);
 
-   // Fonction pour ajouter une nouvelle citation à l'historique
-   const addQuoteToHistory = (newQuote) => {
-    const updatedHistory = [...quoteHistory, newQuote];
-    setQuoteHistory(updatedHistory);
-    // Enregistrer l'historique mis à jour dans localStorage
-    localStorage.setItem(`${user.uid}_quote_history`, JSON.stringify(updatedHistory));
-  };
-
   // Vérifiez si l'utilisateur est défini
   if (!user) {
     return (
@@ -36,12 +27,15 @@ export default function Profile() {
   // Extraire la partie avant "@" de l'email
   const [username] = user.email.split("@");
 
+
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       <div>
         <h1 className="text-lg">
           Bienvenue{" "}
-          <span className="font-bold">{user ? username : "Utilisateur inconnu"}</span>
+          <span className="font-bold">
+            {user ? username : "Utilisateur inconnu"}
+          </span>
         </h1>
       </div>
       <div>
@@ -55,4 +49,3 @@ export default function Profile() {
     </div>
   );
 }
-
