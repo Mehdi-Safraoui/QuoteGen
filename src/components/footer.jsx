@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <>
       <div className="bg-gray-900 text-yellow-500 py-20 font-bold border-t-[5px] border-t-yellow-500 px-32">
-        <div className="max-w-screen-xl h-10 mx-auto flex items-center justify-between">
+        <div className="max-w-screen-xl h-6 mx-auto flex items-center justify-between">
           <div className="flex flex-row items-center">
             <img className="w-[78px]" src="src/assets/Logo.png" alt="logo" />
             <NavbarItems label="QuoteGen" link={Main} />

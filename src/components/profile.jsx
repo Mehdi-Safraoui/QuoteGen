@@ -3,7 +3,7 @@ import useAuth from "../auth-context";
 
 export default function Profile({ addQuoteToHistory }) {
   const { user } = useAuth();
-  const [quoteHistory, setQuoteHistory] = useState([]);
+  const [ quoteHistory, setQuoteHistory ] = useState([]);
 
   useEffect(() => {
     // Récupérer l'historique des citations depuis localStorage
@@ -27,11 +27,10 @@ export default function Profile({ addQuoteToHistory }) {
   // Extraire la partie avant "@" de l'email
   const [username] = user.email.split("@");
 
-
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       <div>
-        <h1 className="text-lg">
+        <h1 className="text-2xl mb-14">
           Bienvenue{" "}
           <span className="font-bold">
             {user ? username : "Utilisateur inconnu"}
@@ -39,7 +38,7 @@ export default function Profile({ addQuoteToHistory }) {
         </h1>
       </div>
       <div>
-        <h2>Historique des citations reçues :</h2>
+        <h2 className="text-lg font-semibold mb-2 underline">Historique des citations reçues :</h2>
         <ul>
           {quoteHistory.map((quote, index) => (
             <li key={index}>{quote}</li>

@@ -3,9 +3,9 @@ import Profile from "./profile";
 import useAuth from "../auth-context";
 
 export default function Main() {
-  const [currentQuote, setCurrentQuote] = useState("");
-  const [currentAuthor, setCurrentAuthor] = useState("");
-  const [quoteHistory, setQuoteHistory] = useState([]);
+  const [ currentQuote, setCurrentQuote ] = useState("");
+  const [ currentAuthor, setCurrentAuthor ] = useState("");
+  const [ quoteHistory, setQuoteHistory ] = useState([]);
   const { user } = useAuth();
 
   // Fonction pour ajouter une nouvelle citation à l'historique
